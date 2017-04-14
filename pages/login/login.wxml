@@ -1,0 +1,11 @@
+<!--login.wxml-->
+<view class="container">
+	<view class="login-top">
+		<image class="login-logo" src="../../images/loginlogo.png" background-size="cover"></image>
+	</view>
+	<view class="login-bottom">
+		<input bindinput="bindUserName" class="login-input" placeholder="用户名"/>
+		<input bindinput="bindPassword" class="login-input" placeholder="密码"/>
+		<button class="login-loginBtn" bindtap="login">登录</button>
+	</view>
+</view>

@@ -1,0 +1,6 @@
+<!--photo.wxml-->
+<view>
+	<button type="primary" bindtap="usePhoto"> 上传照片 </button>
+	<image src="{{source}}" mode="aspecFill"/>
+	<text>{{photoInfo}}</text>
+</view>

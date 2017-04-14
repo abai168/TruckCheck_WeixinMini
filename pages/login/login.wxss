@@ -1,0 +1,25 @@
+.login-top{
+	width:100%;
+	height:583rpx;
+}
+.login-logo{
+	width:750rpx;
+	height:583rpx;
+}
+.login-input{
+	width:605rpx;
+	border-radius:3px;
+	height:90rpx;
+	line-height:90rpx;
+	text-align:left;
+	padding-left:45rpx;
+	background-color:#fff;
+	border:1px solid #a0a0a0;
+	margin-top:70rpx;
+}
+.login-loginBtn{
+	margin-top:80rpx;
+	background-color:#e6532e;
+	color:#fff;
+	letter-spacing:30rpx;
+}
