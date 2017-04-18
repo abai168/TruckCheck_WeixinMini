@@ -1,6 +1,6 @@
 /**index.wxss**/
 .index-top{
-	height:580rpx;
+	height:585rpx;
 	width:100%;
 	background-color:#f19149;
 	text-align:center;
@@ -10,25 +10,71 @@
 	height:118rpx;
 	margin-top:100rpx;
 }
+.swiper-tab{
+	margin:30rpx auto 0rpx auto;
+	width:627rpx;
+	text-align:left;
+}
+.swiper-tab-list{
+	display:inline-block;
+	font-size:20.83rpx;
+	color:#fff;
+	margin-right:30rpx;
+	height:50rpx;
+	line-height:50rpx;
+	text-align:center;
+	border-radius:7rpx;
+}
+.on{
+	color:#f19149;
+	background-color:#fff;
+	width:100rpx;
+	position:relative;
+}
+.on i{
+	width:0;
+	height:0;
+	border-top:13rpx solid #fff;
+	border-right:10rpx solid transparent;
+	border-left:10rpx solid transparent;
+	position:absolute;
+	top:50rpx;
+	left:40rpx;
+}
+swiper{
+	margin:50rpx 38rpx 0rpx 38rpx;
+}
 .index-input{
-	width:605rpx;
-	border-radius:3%;
-	height:90rpx;
-	line-height:90rpx;
+	display:inline-block;
+	width:470rpx;
+	border-radius:8rpx;
+	height:80rpx;
+	line-height:80rpx;
 	text-align:left;
 	padding-left:45rpx;
 	background-color:#fff;
-	margin:85rpx auto 40rpx auto;
+	color:#a0a0a0;
+	font-size:31.24rpx;
+}
+.index-longInput{
+	width:609rpx;
+	margin-left:25rpx;
+	margin-bottom:25rpx;
 }
 .index-searchbtn{
-	width:650rpx;
-	border-radius:3%;
-	height:90rpx;
-	line-height:90rpx;
-	margin-top:40rpx;
+	float:right;
+	width:121rpx;
+	border-radius:8rpx;
+	height:80rpx;
 	margin:auto;
 	background-color:#de6b15;
 	color:#fff;
+}
+.index-searchbtn image{
+	display:inline-block;
+	width:40rpx;
+	height:39rpx;
+	margin:auto;
 }
 .index-bottom{
 	width:100%;
@@ -47,9 +93,24 @@
 }
 .index-menuview image{
 	display:block;
-	width:101rpx;
-	height:101rpx;
 	margin:auto;
+	background-size:cover;
+}
+.index-menu-illegalQuery{
+	width:60rpx;
+	height:52rpx;
+}
+.index-menu-driverInfo{
+	width:50rpx;
+	height:53rpx;
+}
+.index-menu-isOnline{
+	width:55rpx;
+	height:38rpx;
+}
+.index-menu-drivingLicencePoints{
+	width:50rpx;
+	height:48rpx;
 }
 .index-menuview text{
 	display:block;

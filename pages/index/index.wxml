@@ -1,45 +1,63 @@
 <!--index.wxml-->
 <view class="container">
   <view  bindtap="bindViewTap" class="index-top">
-    <image class="index-logo" src="../../images/logo.png" background-size="cover"></image>
-    <input bindinput="bindPlateNo" class="index-input" placeholder="输入车牌号查询车辆位置"/>
-    <button class="index-searchbtn" bindtap="searchPosition">查一查</button>
+    <image class="index-logo" src="../../images/logo.png"></image>
+		<view class="swiper-tab">
+			<view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="switchNav">
+				实时位置
+				<i></i>
+			</view>
+			<view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="switchNav">
+				轨迹查询
+				<i></i>
+			</view>			
+		</view>
+		<swiper current="{{currentTab}}" bindchange="bindChange" duration="0">
+			<swiper-item>
+				<input bindinput="bindPlateNo" class="index-input" placeholder="车牌号"/>
+    			<button class="index-searchbtn" bindtap="searchPosition">
+					<image src="../../images/search.png" ></image>				
+				</button>
+			</swiper-item>
+			<swiper-item>
+				<input bindinput="bindPlateNo" class="index-input index-longInput" placeholder="车牌号"/>
+				<picker mode="date" value="{{date}}" start="{{minDate}}"  end="{{maxDate}}" bindchange="dateChange" class="index-input">{{date}}
+				</picker>
+    			<button class="index-searchbtn" bindtap="searchPosition">
+					<image src="../../images/search.png"></image>
+				</button>
+			</swiper-item>
+		</swiper>
   </view>
   <view class="index-bottom">
     <ul class="index-menu">
     	<li>
     		<view class="index-menuview">
-    			<image src="../../images/illegalQuery.png" background-size="cover"></image>
+    			<image src="../../images/illegalQuery.png" class="index-menu-illegalQuery"></image>
     			<text>违章查询</text>
     		</view>
     	</li>
     	<li>
     		<view class="index-menuview">
-    			<image src="../../images/driverInfo.png" background-size="cover"></image>
+    			<image src="../../images/driverInfo.png" class="index-menu-driverInfo"></image>
     			<text>驾驶员信息</text>
     		</view>
     	</li>
     	<li>
     		<view class="index-menuview">
-    			<image src="../../images/isOnline.png" background-size="cover"></image>
+    			<image src="../../images/isOnline.png" class="index-menu-isOnline"></image>
     			<text>是否在线</text>
     		</view>
     	</li>
     	<li>
     		<view class="index-menuview">
-    			<image src="../../images/drivingLicencePoints.png" background-size="cover"></image>
+    			<image src="../../images/drivingLicencePoints.png" class="index-menu-drivingLicencePoints"></image>
     			<text>驾驶证扣分</text>
-    		</view>
-    	</li>
-    	<li>
-    		<view class="index-menuview">
-    			<image src="../../images/trajectoryQuery.png" background-size="cover"></image>
-    			<text>轨迹查询</text>
     		</view>
     	</li>
         <li>
             <view catchtap="toPhoto" class="index-menuview">
-                <image src="../../images/trajectoryQuery.png" background-size="cover"></image>
+                <image src="../../images/drivingLicencePoints.png" class="index-menu-drivingLicencePoints"></image>
                 <text>图片上传</text>
             </view>
         </li>
