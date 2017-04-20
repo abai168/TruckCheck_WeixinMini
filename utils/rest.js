@@ -1,5 +1,5 @@
 /**
- * 
+ * 封装请求
  */
 var enums = require('enums.js')
 
