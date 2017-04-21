@@ -1,6 +1,46 @@
 <!--photo.wxml-->
-<view>
-	<button type="primary" bindtap="usePhoto"> 上传照片 </button>
-	<image src="{{source}}" mode="aspecFill"/>
-	<text>{{photoInfo}}</text>
+<import src="../../component/select-dropdown.wxml"></import>
+<view class="photo">
+	<!--<view class="photo-cardType">
+		<input bindtap="cardTypeMenu" type="text" placeholder="请选择证件类型"/>
+		<ul class="{{showSelect == true ? 'show':'hidden'}}">
+			<li>请选择证件类型</li>
+			<li bindtap="mySelect" data-card="1">一代身份证</li>
+			<li bindtap="mySelect" data-card="2">二代身份证正面</li>
+			<li bindtap="mySelect" data-card="3">二代身份证证背面</li>
+			<li bindtap="mySelect" data-card="4">临时身份证</li>
+			<li bindtap="mySelect" data-card="5">驾照</li>
+			<li bindtap="mySelect" data-card="6">行驶证</li>
+			<li bindtap="mySelect" data-card="7">军官证</li>
+			<li bindtap="mySelect" data-card="9">中华人民共和国往来港澳通行证(护照幅面)</li>
+			<li bindtap="mySelect" data-card="10">台湾居民往来大陆通行证(护照幅面)</li>
+			<li bindtap="mySelect" data-card="11">大陆居民往来台湾通行证(护照幅面)</li>
+			<li bindtap="mySelect" data-card="12">签证(护照幅面)</li>
+			<li bindtap="mySelect" data-card="13">护照(护照幅面)</li>
+			<li bindtap="mySelect" data-card="14">港澳居民来往内地通行证正面(卡幅面)</li>
+			<li bindtap="mySelect" data-card="15">港澳居民来往内地通行证背面(卡幅面)</li>
+			<li bindtap="mySelect" data-card="16">户口本</li>
+			<li bindtap="mySelect" data-card="17">银行卡</li>
+			<li bindtap="mySelect" data-card="19">车牌</li>
+			<li bindtap="mySelect" data-card="20">名片</li>
+			<li bindtap="mySelect" data-card="1000">居住证</li>
+			<li bindtap="mySelect" data-card="1001">香港永久性居民身份证</li>
+			<li bindtap="mySelect" data-card="1002">登机牌（拍照设备目前不支持登机牌的识别）</li>
+			<li bindtap="mySelect" data-card="1003">边民证（A）（照片页）</li>
+			<li bindtap="mySelect" data-card="1004">边民证（B）（个人信息页）</li>
+			<li bindtap="mySelect" data-card="1005">澳门身份证</li>
+			<li bindtap="mySelect" data-card="1006">领取凭证(AVA6支持)</li>
+			<li bindtap="mySelect" data-card="1007">律师证（A）（信息页）</li>
+			<li bindtap="mySelect" data-card="1008">律师证（B） （照片页）</li>
+			<li bindtap="mySelect" data-card="1030">全民健康保险卡</li>
+			<li bindtap="mySelect" data-card="1031">台湾身份证正面</li>
+			<li bindtap="mySelect" data-card="1032">台湾身份证背面</li>
+		</ul>
+	</view>-->
+	<template is="selectDropdown" data="{{cardTypeObj}}"></template>
+	<view class="photo-upload">
+		<image src="{{source}}" mode="aspecFill"/>
+		<button type="primary" bindtap="usePhoto"> {{uploadMessage}} </button>
+	</view>
+	<button type="primary" bindtap="submit">提交</button>
 </view>

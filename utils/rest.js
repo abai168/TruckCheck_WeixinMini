@@ -8,8 +8,8 @@ var BASE_URL = "http://172.16.19.27:8032/wxmini"
 var requestHandler = {
     api: {},
     params: {},
-    success: function() {},
-    fail: function() {}
+    header: {},
+    success: function() {}
 }
 
 // GET请求
@@ -28,12 +28,13 @@ function request(method, requestHandler) {
         url: API_URL,
         data: requestHandler.params,
         method: method,
-        // header:{},
+        header: requestHandler.header,
         success: function(res) {
-            resultByCode(res.data.code)
+            resultByCode(res, requestHandler)
         },
         fail: function() {
-            requestHandler.fail()
+            console.log(res.data);
+            console.log('is failed')
         },
         complete: function() {
 
@@ -41,8 +42,8 @@ function request(method, requestHandler) {
     })
 }
 
-function resultByCode(code) {
-    switch (code) {
+function resultByCode(res, requestHandler) {
+    switch (res.data.code) {
         case 1001:
             requestHandler.success(res);
             break;
@@ -61,7 +62,7 @@ function resultByCode(code) {
         case 9003:
             wx.showModal({
                 title: '提示',
-                content: enums.resultCode[code],
+                content: enums.resultCode[res.data.code],
                 success: function(res) {
                     if (res.confirm) {
                         console.log('用户点击确定')

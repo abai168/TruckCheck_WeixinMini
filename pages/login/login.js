@@ -43,11 +43,6 @@ Page({
                     url: '../index/index'
                 })
                 console.log(res.data);
-
-            },
-            fail: function() {
-                console.log(res.data);
-                console.log('is failed')
             }
         })
     }

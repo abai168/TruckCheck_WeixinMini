@@ -1,17 +1,4 @@
-.hidden{
-    display:none
-}
-.show{
-    display:block;
-}
-.photo-upload{
-    text-align:center;
-}
-.photo button{
-    margin-bottom:35rpx;
-    width:640rpx;
-}
-.photo-cardType input{
+.select-dropdown input{
     border:2rpx solid #C3C1C1;
     border-radius:8rpx;
     height:90rpx;
@@ -20,13 +7,13 @@
     width:640rpx;
     margin:0 auto 35rpx auto;
 }
-.photo-cardType ul{
+.select-dropdown ul{
     position:absolute;
     z-index:100;
     background:#fff;
     top:0px;
 }
-.photo-cardType ul li{
+.select-dropdown ul li{
     width:100%;
     display:block;
     text-align:center;
