@@ -1,5 +1,5 @@
 /**app.wxss**/
-@import "./component/select-dropdown.wxss";
+@import "./component/select-dropdown/select-dropdown.wxss";
 .container {
   height: 100%;
   display: flex;

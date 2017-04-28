@@ -1,31 +1,34 @@
 // photo.js
-var rest = require('../../utils/rest.js')
-var selectDropdown = require('../../component/select-dropdown.js')
+var list = require('../../utils/list.js')
+    // import { SelectDropdown } from '../../component/select-dropdown/select-dropdown.js'
+
 var app = getApp()
 Page({
-    selectDropdown,
+    // SelectDropdown,
     data: {
         source: '../../images/uploadDefault.png',
         uploadMessage: '未上传',
         showSelect: false,
-        cardType: ''
+        cardType: '',
+        cardTypeList: list.cardType,
     },
     // onLoad: function() {
-    //     new this.selectDropdown.select()
+    //     new this.SelectDropdown(this.data.cardTypeObj)
     // },
-    // 证件类型下拉选择
-    // cardTypeMenu: function(e) {
-    //     var that = this
-    //     that.setData({
-    //         showSelect: !this.data.showSelect
-    //     })
-    // },
-    // mySelect: function(e) {
-    //     this.setData({
-    //         cardType: e.target.dataset.card,
-    //         showSelect: false
-    //     })
-    // },
+    //证件类型下拉选择
+    cardTypeMenu: function(e) {
+        var that = this
+        that.setData({
+            showSelect: !this.data.showSelect
+        })
+    },
+    mySelect: function(e) {
+        this.setData({
+            cardType: e.target.dataset.card.key,
+            selected: e.target.dataset.card.value,
+            showSelect: false
+        })
+    },
     usePhoto: function() {
         var that = this
         wx.chooseImage({

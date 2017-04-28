@@ -1,8 +1,10 @@
 {
     "pages": [
-        "pages/photo/photo",
+        "pages/queryTrajectory/queryTrajectory",
         "pages/index/index",
+        "pages/lastPosition/lastPosition",
         "pages/login/login",
+        "pages/photo/photo",
         "pages/logs/logs"
     ],
     "window": {

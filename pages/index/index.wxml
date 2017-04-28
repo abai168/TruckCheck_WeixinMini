@@ -20,10 +20,10 @@
 				</button>
 			</swiper-item>
 			<swiper-item>
-				<input bindinput="bindPlateNo" class="index-input index-longInput" placeholder="车牌号"/>
+				<input bindinput="bindPlateNo2" class="index-input index-longInput" placeholder="车牌号"/>
 				<picker mode="date" value="{{date}}" start="{{minDate}}"  end="{{maxDate}}" bindchange="dateChange" class="index-input">{{date}}
 				</picker>
-    			<button class="index-searchbtn" bindtap="searchPosition">
+    			<button class="index-searchbtn" bindtap="searchTrajectory">
 					<image src="../../images/search.png"></image>
 				</button>
 			</swiper-item>
@@ -56,7 +56,7 @@
     		</view>
     	</li>
         <li>
-            <view catchtap="toPhoto" class="index-menuview">
+            <view bindtap="toPhoto" class="index-menuview">
                 <image src="../../images/drivingLicencePoints.png" class="index-menu-drivingLicencePoints"></image>
                 <text>图片上传</text>
             </view>

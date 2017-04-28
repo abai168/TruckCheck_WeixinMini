@@ -1,0 +1,14 @@
+<view class="container">
+    <map 
+        id="map" 
+        scale="14" 
+        circles="{{circles}}"
+        markers="{{markers}}" 
+        polyline="{{polyline}}" 
+        controls="{{controls}}" 
+        bindcontroltap="controltap" 
+        bindmarkertap="markertap"  bindregionchange="regionchange" 
+        show-location 
+        style="width: 100%; height: 1000rpx;">
+    </map>
+</view>

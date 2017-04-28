@@ -24,15 +24,21 @@ function POST(requestHandler) {
 
 function request(method, requestHandler) {
     var API_URL = BASE_URL + '/' + requestHandler.api.ctrl + '/' + requestHandler.api.action;
+    if (typeof requestHandler.params == 'string') {
+        requestHandler.params = JSON.stringify(requestHandler.params)
+    }
     wx.request({
         url: API_URL,
         data: requestHandler.params,
         method: method,
-        header: requestHandler.header,
+        header: requestHandler.header || {
+            'content-type': method == 'GET' ? 'application/json' : 'application/x-www-form-urlencoded',
+            'token': wx.getStorageSync('Token')
+        },
         success: function(res) {
             resultByCode(res, requestHandler)
         },
-        fail: function() {
+        fail: function(res) {
             console.log(res.data);
             console.log('is failed')
         },
@@ -45,12 +51,13 @@ function request(method, requestHandler) {
 function resultByCode(res, requestHandler) {
     switch (res.data.code) {
         case 1001:
-            requestHandler.success(res);
+            requestHandler.success ? requestHandler.success(res.data) : null;
             break;
         case 1002:
         case 1003:
         case 1004:
         case 1005:
+            // wx.redirectTo()是关闭当前页面，跳转到某个页面，跳转页面后不能返回上一页
             wx.redirectTo({
                 url: '../login/login'
             })

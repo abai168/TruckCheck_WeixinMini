@@ -8,6 +8,7 @@
     margin:0 auto 35rpx auto;
 }
 .select-dropdown ul{
+    width:100%;
     position:absolute;
     z-index:100;
     background:#fff;

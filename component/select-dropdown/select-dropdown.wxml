@@ -1,8 +1,8 @@
 <template name="selectDropdown">
     <view class="select-dropdown">
         <input catchtap="showUl" type="text" placeholder="{{selected_value}}"/>
-        <ul class="{{select_showLi == true ? 'show' : 'hidden'}}">
-            <li wx:for="select_list" catchtap="mySelect" data-item="{{select_list}}">{{select_list.value}}</li>
+        <ul class="{{select_showLi == true ? 'hidden' : 'show'}}">
+            <view wx:for="{{select_list}}" catchtap="mySelect" data-item="{{item}}">{{item.value}}</view>
         </ul>
     </view>
 </template>
