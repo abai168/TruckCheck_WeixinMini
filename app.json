@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/queryTrajectory/queryTrajectory",
         "pages/index/index",
+        "pages/queryTrajectory/queryTrajectory",
         "pages/lastPosition/lastPosition",
         "pages/login/login",
         "pages/photo/photo",
