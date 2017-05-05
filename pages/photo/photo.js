@@ -7,10 +7,11 @@ Page({
     // SelectDropdown,
     data: {
         source: '../../images/uploadDefault.png',
-        uploadMessage: '未上传',
+        uploadMessage: '点击上传',
         showSelect: false,
         cardType: '',
         cardTypeList: list.cardType,
+        selected: '请选择证件类型'
     },
     // onLoad: function() {
     //     new this.SelectDropdown(this.data.cardTypeObj)
@@ -33,6 +34,7 @@ Page({
         var that = this
         wx.chooseImage({
             count: 1, //默认9
+            sizeType: ['compressed'],
             success: function(res) {
                 that.setData({
                     source: res.tempFilePaths[0],
@@ -59,10 +61,18 @@ Page({
             name: 'card',
             header: { 'Content-Type': 'multipart/form-data', 'token': wx.getStorageSync('Token') },
             success: function(res) {
-                if (!res.data) {
+                var res_data = JSON.parse(res.data)
+                if (!res_data) {
                     wx.showModal({
                         title: '提示',
                         content: '上传失败',
+                        showCancel: false
+                    })
+                    return;
+                } else if (!res_data.result) {
+                    wx.showModal({
+                        title: '提示',
+                        content: '证照不合法',
                         showCancel: false
                     })
                     return;

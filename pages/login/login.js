@@ -31,18 +31,18 @@ Page({
             success: function(res) {
                 that.setData({
                     //eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJJZCI6IjM0YmU0ODAwLTIxMDMtNDQ0Yy1iMTBmLWE2NGEwYjBkMzY4YyIsIktleSI6bnVsbCwiRGF0ZSI6IlwvRGF0ZSgxNDkzNzk1MjYwMTk5KVwvIn0.Cuc4rXm1OpgeJBN3J14qWYEIGSVXI-xXqflrNXps0ck
-                    Token: res.data.result,
+                    Token: res.result,
                     response: res
                 })
                 try {
-                    wx.setStorageSync('Token', res.data.result)
+                    wx.setStorageSync('Token', res.result)
                 } catch (e) {
 
                 }
                 wx.navigateTo({
                     url: '../index/index'
                 })
-                console.log(res.data);
+                console.log(res);
             }
         })
     }

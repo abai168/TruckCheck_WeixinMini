@@ -1,0 +1,40 @@
+.illegal{
+    width:100%;
+}
+.illegal-input{
+    width:605rpx;
+	border-radius:3px;
+	height:90rpx;
+	line-height:90rpx;
+	text-align:left;
+	padding-left:45rpx;
+	background-color:#fff;
+	border:1px solid #a0a0a0;
+	margin:45rpx auto 0rpx auto;
+}
+.illegal-help{
+    width:655rpx;
+    margin:0 auto;
+}
+.illegal-help input,.illegal-help view{
+    display:inline-block;
+}
+.illegal-help input{
+    width:535rpx;
+}
+.illegal-help view{
+	float:right;
+	margin-top:65rpx;
+	vertical-align:middle;
+}
+.illegal-btn-carCodeDrive image{
+    width:50rpx;
+    height:50rpx;
+}
+.illegal-searchBtn{
+    margin-top:80rpx;
+    width:655rpx;
+	background-color:#e6532e;
+	color:#fff;
+	letter-spacing:30rpx;
+}

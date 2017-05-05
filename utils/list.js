@@ -120,6 +120,76 @@ var cardType = [{
         value: '台湾身份证背面'
     }
 ]
+var carNumberType = [{
+        key: '01',
+        value: '大型汽车'
+    },
+    {
+        key: '02',
+        value: '小型汽车'
+    },
+    // {
+    //     key: '03',
+    //     value: '使馆汽车'
+    // },
+    // {
+    //     key: '04',
+    //     value: '领馆汽车'
+    // },
+    // {
+    //     key: '05',
+    //     value: '境外汽车'
+    // },
+    // {
+    //     key: '06',
+    //     value: '外籍汽车'
+    // },
+    // {
+    //     key: '07',
+    //     value: '两三轮摩托车'
+    // },
+    // {
+    //     key: '08',
+    //     value: '轻便摩托车'
+    // },
+    // {
+    //     key: '09',
+    //     value: '使馆摩托车'
+    // },
+    // {
+    //     key: '10',
+    //     value: '领馆摩托车'
+    // },
+    // {
+    //     key: '11',
+    //     value: '境外摩托车'
+    // },
+    // {
+    //     key: '12',
+    //     value: '外籍摩托车'
+    // },
+    // {
+    //     key: '13',
+    //     value: '农用运输车'
+    // },
+    // {
+    //     key: '14',
+    //     value: '拖拉机'
+    // },
+    // {
+    //     key: '15',
+    //     value: '挂车'
+    // },
+    // {
+    //     key: '16',
+    //     value: '教练汽车'
+    // },
+    // {
+    //     key: '17',
+    //     value: '教练摩托车'
+    // },
+]
 module.exports = {
-    cardType: cardType
+    cardType: cardType,
+    carNumberType: carNumberType
 }

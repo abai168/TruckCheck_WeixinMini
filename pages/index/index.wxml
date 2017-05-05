@@ -32,7 +32,7 @@
   <view class="index-bottom">
     <ul class="index-menu">
     	<li>
-    		<view class="index-menuview">
+    		<view class="index-menuview" bindtap="toIllegalQuery">
     			<image src="../../images/illegalQuery.png" class="index-menu-illegalQuery"></image>
     			<text>违章查询</text>
     		</view>
@@ -58,7 +58,7 @@
         <li>
             <view bindtap="toPhoto" class="index-menuview">
                 <image src="../../images/drivingLicencePoints.png" class="index-menu-drivingLicencePoints"></image>
-                <text>图片上传</text>
+                <text>证照核验</text>
             </view>
         </li>
     </ul>

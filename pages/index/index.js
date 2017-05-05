@@ -119,6 +119,12 @@ Page({
             //     }
             // })
     },
+    // 违章查询
+    toIllegalQuery: function() {
+        wx.redirectTo({
+            url: '../illegalQuery/illegalQuery'
+        })
+    },
     toPhoto: function() {
         wx.redirectTo({
             url: '../photo/photo'

@@ -3,7 +3,8 @@
  */
 var enums = require('enums.js')
 
-var BASE_URL = "http://172.16.19.27:8032/wxmini"
+var BASE_URL = "http://172.16.19.106:8888/wxmini"
+    // var BASE_URL = "http://61.144.244.17:800/wxmini"
 
 var requestHandler = {
     api: {},

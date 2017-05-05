@@ -11,7 +11,7 @@
     margin-bottom:35rpx;
     width:640rpx;
 }
-.photo-cardType input{
+.photo-cardType .photo-select{
     border:2rpx solid #C3C1C1;
     border-radius:8rpx;
     height:90rpx;
@@ -27,7 +27,7 @@
     top:0px;
 }
 .photo-cardType ul li{
-    width:100%;
+    width:750rpx;
     display:block;
     text-align:center;
     height:90rpx;

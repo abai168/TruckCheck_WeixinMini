@@ -2,7 +2,7 @@
 <!--<import src="../../component/select-dropdown/select-dropdown.wxml"></import>-->
 <view class="photo">
 	<view class="photo-cardType">
-		<input bindtap="cardTypeMenu" type="text" placeholder="请选择证件类型" value="{{selected}}"/>
+		<view class="photo-select" bindtap="cardTypeMenu">{{selected}}</view>
 		<ul class="{{showSelect == true ? 'show':'hidden'}}">
 			<li wx:for="{{cardTypeList}}"  bindtap="mySelect" data-card="{{item}}">{{item.value}}
 			</li>
