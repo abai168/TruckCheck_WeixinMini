@@ -1,0 +1,6 @@
+<!--driverInfo.wxml-->
+<view class="driverInfo">
+    <input bindinput="bindUserName" class="driverInfo-input" placeholder="姓名"/>
+    <input bindinput="bindCardID" class="driverInfo-input" placeholder="身份证"/>
+    <button class="driverInfo-driverInfoBtn" bindtap="search">查一查</button>
+</view>

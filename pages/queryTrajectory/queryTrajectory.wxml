@@ -1,7 +1,7 @@
-<view class="container">
+<view>
     <map 
         id="map" 
-        scale="5" 
+        scale="13" 
         longitude="{{longitude}}" 
         latitude="{{latitude}}"
         circles="{{circles}}"

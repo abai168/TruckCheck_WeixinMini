@@ -48,6 +48,7 @@ Page({
             'markers[1].longitude': temp[temp.length - 1].longitude,
             'polyline[0].points': temp
         })
+
     },
     regionchange(e) {
         console.log(e.type)

@@ -1,0 +1,6 @@
+<view class="driverDetail">
+    <image src="{{detail.idCardPhoto}}"></image>
+    <view>姓名：{{detail.idCardName}}</view>
+    <view>身份证号：{{detail.idCardCode}}</view>
+    <view>是否一致：{{detail.message}}</view>
+</view>

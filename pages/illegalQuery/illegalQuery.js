@@ -15,7 +15,7 @@ Page({
             carcode: '',
             cardrivenumber: '',
             phone: '',
-            cartype: ''
+            cartype: '01'
         }
     },
     onLoad: function() {
@@ -34,7 +34,7 @@ Page({
     // 车牌号
     bindPlateNo: function(e) {
         this.setData({
-            'query.carNumberType': e.detail.value
+            'query.carnumber': e.detail.value
         })
     },
     // 车辆类型
@@ -63,19 +63,29 @@ Page({
         })
     },
     helpCarCodeDrive: function() {
-        showHelp
+        this.setData({
+            showHelp: true
+        })
+    },
+    closeHelp: function() {
+        this.setData({
+            showHelp: false
+        })
     },
     // 查一查
     search: function() {
-        var that = this
-        rest.POST({
-            api: { ctrl: 'User', action: 'Login' },
-            params: that.data.query,
-            success: function(res) {
+        wx.navigateTo({
+                url: '../illegalDetail/illegalDetail?para=' + JSON.stringify(this.data.query)
+            })
+            // var that = this
+            // rest.POST({
+            //     api: { ctrl: 'Violation', action: 'QueryViolation' },
+            //     params: that.data.query,
+            //     success: function(res) {
 
-                console.log(res.data);
-            }
-        })
+        //         console.log(res.data);
+        //     }
+        // })
     }
 
 

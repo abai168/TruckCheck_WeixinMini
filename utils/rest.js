@@ -3,8 +3,7 @@
  */
 var enums = require('enums.js')
 
-var BASE_URL = "http://172.16.19.106:8888/wxmini"
-    // var BASE_URL = "http://61.144.244.17:800/wxmini"
+var BASE_URL = getApp().globalData.baseURL_pre + "/wxmini"
 
 var requestHandler = {
     api: {},
@@ -25,15 +24,16 @@ function POST(requestHandler) {
 
 function request(method, requestHandler) {
     var API_URL = BASE_URL + '/' + requestHandler.api.ctrl + '/' + requestHandler.api.action;
-    if (typeof requestHandler.params == 'string') {
-        requestHandler.params = JSON.stringify(requestHandler.params)
-    }
+    // if (typeof requestHandler.params != 'string') {
+    //     requestHandler.params = JSON.stringify(requestHandler.params)
+    // }
     wx.request({
         url: API_URL,
         data: requestHandler.params,
         method: method,
         header: requestHandler.header || {
-            'content-type': method == 'GET' ? 'application/json' : 'application/x-www-form-urlencoded',
+            // 'content-type': method == 'GET' ? 'application/json' : 'application/x-www-form-urlencoded',
+            'content-type': 'application/json',
             'token': wx.getStorageSync('Token')
         },
         success: function(res) {
@@ -65,6 +65,8 @@ function resultByCode(res, requestHandler) {
             break;
         case 1006:
         case 2001:
+        case 2002:
+        case 2003:
         case 9001:
         case 9002:
         case 9003:

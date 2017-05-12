@@ -9,3 +9,9 @@
   box-sizing: border-box;
   font-family: 微软雅黑;
 } 
+.hidden{
+    display:none
+}
+.show{
+    display:block;
+}

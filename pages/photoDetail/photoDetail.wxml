@@ -1,0 +1,8 @@
+<view class="photoDetail">
+    <ul>
+        <li wx:for="{{photoDetail}}" wx:for-item="value" wx:for-index="key">
+            <text>{{key=='头像'}}:</text>
+            <text>{{value}}</text>
+        </li>
+    </ul>
+</view>

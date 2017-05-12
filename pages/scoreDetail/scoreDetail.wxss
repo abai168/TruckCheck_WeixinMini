@@ -1,0 +1,12 @@
+.scoreDetail{
+    margin-top:60rpx;
+}
+.scoreDetail .name{
+    font-weight:bold;
+}
+.scoreDetail view{
+    margin:20rpx;
+}
+.scoreDetail .red{
+    color:red;
+}

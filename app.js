@@ -25,6 +25,8 @@ App({
         }
     },
     globalData: {
-        userInfo: null
+        // baseURL_pre : "http://172.16.19.27:8033"
+        // baseURL_pre: "http://172.16.19.106:8888"
+        baseURL_pre: "https://wxmini.huochechacha.com"
     }
 })

@@ -1,0 +1,24 @@
+<view class="seachCarsDetail">
+    <view class="searchCars-search">
+        <input bindinput="bindPlateNo" class="seachCars-input seachCars-longInput" placeholder="请输入地址"/>
+        <input bindinput="bindPlateNo" class="seachCars-input" placeholder="请输入搜索范围（公里）"/>
+        <button class="seachCars-searchbtn" bindtap="searchTrajectory">
+            <image src="../../images/search.png"></image>
+        </button>
+    </view>
+    <map 
+        id="map" 
+        scale="10" 
+        longitude="{{longitude}}" 
+        latitude="{{latitude}}"
+        circles="{{circles}}"
+        markers="{{markers}}" 
+        polyline="{{polyline}}" 
+        controls="{{controls}}" 
+        bindcontroltap="controltap" 
+        bindmarkertap="markertap"  
+        bindregionchange="regionchange" 
+        show-location 
+        style="width: 100%; height: 1200rpx;">
+    </map>
+</view>

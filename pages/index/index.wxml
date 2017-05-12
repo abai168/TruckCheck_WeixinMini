@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="index-top">
+  <view class="index-top">
     <image class="index-logo" src="../../images/logo.png"></image>
 		<view class="swiper-tab">
 			<view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="switchNav">
@@ -38,25 +38,31 @@
     		</view>
     	</li>
     	<li>
-    		<view class="index-menuview">
+    		<view class="index-menuview" bindtap="toDriverInfo">
     			<image src="../../images/driverInfo.png" class="index-menu-driverInfo"></image>
     			<text>驾驶员信息</text>
     		</view>
     	</li>
     	<li>
-    		<view class="index-menuview">
+    		<view class="index-menuview" bindtap="toIsExists">
     			<image src="../../images/isOnline.png" class="index-menu-isOnline"></image>
     			<text>是否在线</text>
     		</view>
     	</li>
     	<li>
-    		<view class="index-menuview">
+    		<view class="index-menuview" bindtap="toDriveLisenceScore">
     			<image src="../../images/drivingLicencePoints.png" class="index-menu-drivingLicencePoints"></image>
     			<text>驾驶证扣分</text>
     		</view>
     	</li>
+		<li>
+            <view class="index-menuview" bindtap="toSeachCars">
+                <image src="../../images/drivingLicencePoints.png" class="index-menu-drivingLicencePoints"></image>
+                <text>雷达搜车</text>
+            </view>
+        </li>
         <li>
-            <view bindtap="toPhoto" class="index-menuview">
+            <view bindtap="toMessage" class="index-menuview">
                 <image src="../../images/drivingLicencePoints.png" class="index-menu-drivingLicencePoints"></image>
                 <text>证照核验</text>
             </view>

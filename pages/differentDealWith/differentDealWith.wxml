@@ -1,0 +1,8 @@
+<view class="different">
+    <input bindinput="bindUserName" class="different-input" placeholder="姓名"/>
+    <input bindinput="bindPhone" class="different-input" placeholder="手机号码" value="{{info.phone}}"/>
+    <input bindinput="bindPlateNo" class="different-input" placeholder="车牌号码" value="{{info.carnumber}}"/>
+    <input bindinput="bindCarCode" class="different-input" placeholder="车架号" value="{{info.carcode}}"/>
+    <input bindinput="bindCarDriveNumber" class="different-input" placeholder="发动机号码" value="{{info.cardrivenumber}}"/>
+    <button class="different-differentBtn" bindtap="submit">提交</button>
+</view>

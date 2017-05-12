@@ -1,0 +1,23 @@
+.illegalDetail{
+    margin-top:60rpx;
+}
+.illegalDetail view{
+    margin:10rpx;
+}
+.illegalDetail button{
+    margin-bottom:35rpx;
+    width:640rpx;
+    background-color:#31b0d5;
+}
+.illegalDetail .plateNo{
+    text-align:center;
+}
+.illegalDetail .plateNo text{
+    color:#ec542b;
+    font-weight:bold;
+}
+.illegalDetail .info{
+    background-color:#eee;
+    margin-bottom:20rpx;
+    padding:10rpx;
+}

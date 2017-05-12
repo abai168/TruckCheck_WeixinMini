@@ -1,0 +1,7 @@
+.scoreDetail{
+    margin-top:60rpx;
+    text-align:center;
+}
+.scoreDetail view{
+    margin:10rpx;
+}

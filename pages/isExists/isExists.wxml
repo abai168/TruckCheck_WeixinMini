@@ -1,0 +1,5 @@
+<!--isExists.wxml-->
+<view class="isExists">
+    <input bindinput="bindPlateNo" class="isExists-input" placeholder="车牌号"/>
+    <button class="isExists-isExistsBtn" bindtap="search">查一查</button>
+</view>

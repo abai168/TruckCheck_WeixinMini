@@ -14,7 +14,9 @@
             <image src="../../images/carCodeDrive.png"></image>
         </view>
     </view>
-    <view class="{{showHelp == true ? 'show':'hidden'}} helpCarCodeDrive"></view>
+    <view class="{{showHelp == true ? 'show':'hidden'}} helpCarCodeDrive">
+        <image bindtap="closeHelp" src="../../images/helpCarCodeDrive.png"></image>
+    </view>
     <input bindinput="bindPhone" class="illegal-input" placeholder="请输入手机号码"/>
     <button class="illegal-searchBtn" bindtap="search">查一查</button>
 </view>

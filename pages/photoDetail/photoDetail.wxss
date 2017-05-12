@@ -1,0 +1,4 @@
+.photoDetail li{
+    display:block;
+    margin:10rpx;
+}

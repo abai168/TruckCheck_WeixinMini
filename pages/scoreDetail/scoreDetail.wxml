@@ -1,0 +1,7 @@
+<view class="scoreDetail">
+    <view class="name">用户名：{{score.realname}}</view>
+    <view>档案编号：{{score.licenseid}}</view>
+    <view>驾驶证编号：{{score.licensenumber}}</view>
+    <view>清分日期：{{score.date}}</view>
+    <view class="red">扣分：{{score.score}}</view>
+</view>

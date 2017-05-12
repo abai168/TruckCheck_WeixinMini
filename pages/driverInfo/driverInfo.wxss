@@ -1,0 +1,21 @@
+.driverInfo{
+    width:100%;
+}
+.driverInfo-input{
+	width:605rpx;
+	border-radius:3px;
+	height:90rpx;
+	line-height:90rpx;
+	text-align:left;
+	padding-left:45rpx;
+	background-color:#fff;
+	border:1px solid #a0a0a0;
+	margin:70rpx auto 0 auto;
+}
+.driverInfo-driverInfoBtn{
+	margin-top:80rpx;
+	background-color:#e6532e;
+	color:#fff;
+	letter-spacing:30rpx;
+    width:655rpx;
+}

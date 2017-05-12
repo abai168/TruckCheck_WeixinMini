@@ -1,0 +1,6 @@
+<!--driveLisenceScore.wxml-->
+<view class="driveLisenceScore">
+    <input bindinput="bindLicensenumber" class="driveLisenceScore-input" placeholder="请输入档案编号"/>
+    <input bindinput="bindLicenseid" class="driveLisenceScore-input" placeholder="请输入驾驶证号"/>
+    <button class="driveLisenceScore-driveLisenceScoreBtn" bindtap="search">查一查</button>
+</view>

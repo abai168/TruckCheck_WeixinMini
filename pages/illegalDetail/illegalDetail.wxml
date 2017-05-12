@@ -1,0 +1,14 @@
+<view class="illegalDetail">
+    <view class="plateNo">车牌号码：<text>{{para.carnumber}}</text></view>
+    <view wx:for="{{illegalInfo}}" class="info">
+        <view>违章时间：{{illegalInfo[index].Time}}</view>
+        <view>违章地点：
+            <text>{{illegalInfo[index].LocationName}}</text>
+            <text>{{illegalInfo[index].Location}}</text>
+        </view>
+        <view>违章原因：{{illegalInfo[index].Reason}}</view>
+        <view>罚款：{{illegalInfo[index].count}}元</view>
+        <view>记分：{{illegalInfo[index].Degree}}分</view>
+    </view>
+    <button class="driverInfo-driverInfoBtn" bindtap="dealwith">异地办理</button> 
+</view>

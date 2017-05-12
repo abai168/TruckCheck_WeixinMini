@@ -38,3 +38,16 @@
 	color:#fff;
 	letter-spacing:30rpx;
 }
+.helpCarCodeDrive{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:-1rpx;
+	z-index:100;
+	background:#333232;
+	opacity:0.8;
+	text-align:center;
+}
+.helpCarCodeDrive image{
+	padding-top:300rpx;
+}

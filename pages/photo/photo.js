@@ -55,8 +55,22 @@ Page({
         })
     },
     submit: function() {
+        // var res_result = {
+        //     住址: "广东省深圳市福田区滨河大道御景华城花园1栋B座25村房",
+        //     保留: "",
+        //     公民身份号码: "452624198712222564",
+        //     出生: "1987-12-22",
+        //     头像: "http://172.16.19.106:8888/Pic/cwz-85cd2462-e912-45c0-b3ef-705ced875e31.jpg",
+        //     姓名: "覃冬花",
+        //     性别: "女",
+        //     民族: "壮"
+
+        // }
+        // wx.navigateTo({
+        //         url: '../photoDetail/photoDetail?photoDetail=' + JSON.stringify(res_result)
+        //     })
         wx.uploadFile({
-            url: 'http://172.16.19.106:8888/wxmini/CertificateRecognition/QueryCertificate?cardType=' + this.data.cardType,
+            url: app.globalData.baseURL_pre + '/wxmini/CertificateRecognition/QueryCertificate?cardType=' + this.data.cardType,
             filePath: this.data.source,
             name: 'card',
             header: { 'Content-Type': 'multipart/form-data', 'token': wx.getStorageSync('Token') },
@@ -65,7 +79,7 @@ Page({
                 if (!res_data) {
                     wx.showModal({
                         title: '提示',
-                        content: '上传失败',
+                        content: '提交失败',
                         showCancel: false
                     })
                     return;
@@ -77,16 +91,8 @@ Page({
                     })
                     return;
                 } else {
-                    wx.showModal({
-                        title: '提示',
-                        content: '提交成功',
-                        success: function(res) {
-                            if (res.confirm) {
-                                console.log('用户点击确定')
-                            } else if (res.cancel) {
-                                console.log('用户点击取消')
-                            }
-                        }
+                    wx.navigateTo({
+                        url: '../photoDetail/photoDetail?photoDetail=' + JSON.stringify(res_data.result)
                     })
                 }
             },

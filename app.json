@@ -6,12 +6,22 @@
         "pages/lastPosition/lastPosition",
         "pages/login/login",
         "pages/photo/photo",
+        "pages/photoDetail/photoDetail",
+        "pages/driverInfo/driverInfo",
+        "pages/driverDetail/driverDetail",
+        "pages/isExists/isExists",
+        "pages/driveLisenceScore/driveLisenceScore",
+        "pages/seachCars/seachCars",
+        "pages/seachCarsDetail/seachCarsDetail",
+        "pages/scoreDetail/scoreDetail",
+        "pages/illegalDetail/illegalDetail",
+        "pages/differentDealWith/differentDealWith",
         "pages/logs/logs"
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
+        "navigationBarBackgroundColor": "#f19149",
+        "navigationBarTitleText": "货车查查",
         "navigationBarTextStyle": "black"
     }
 }
