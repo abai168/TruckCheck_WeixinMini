@@ -55,7 +55,7 @@
     			<text>驾驶证扣分</text>
     		</view>
     	</li>
-		<li>
+		<!--<li>
             <view class="index-menuview" bindtap="toSeachCars">
                 <image src="../../images/drivingLicencePoints.png" class="index-menu-drivingLicencePoints"></image>
                 <text>雷达搜车</text>
@@ -66,7 +66,7 @@
                 <image src="../../images/drivingLicencePoints.png" class="index-menu-drivingLicencePoints"></image>
                 <text>证照核验</text>
             </view>
-        </li>
+        </li>-->
     </ul>
   </view>
 </view>

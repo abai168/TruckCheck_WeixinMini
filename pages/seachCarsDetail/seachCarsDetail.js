@@ -1,54 +1,157 @@
 /**
  * 雷达搜车
  */
+var rest = require('../../utils/rest.js')
 var app = getApp()
 Page({
     data: {
-        latitude: '',
-        longitude: '',
-        markers: [{
-                id: 1,
-                latitude: '',
-                longitude: '',
-                title: '起点',
-                width: 15,
-                height: 15
-            },
-            {
-                id: 2,
-                latitude: '',
-                longitude: '',
-                title: '终点',
-                width: 15,
-                height: 15
-            }
-        ],
-        polyline: [{
-            points: [],
-            color: "#e207c7",
-            width: 5,
-            dottedLine: false
-        }]
-    },
-    onLoad: function() {
-        // var temp = wx.getStorageSync('Trajectory')
-        // var temp = [{
-        //     longitude: 113.3245211,
-        //     latitude: 23.10229
-        // }, {
-        //     longitude: 113.324520,
-        //     latitude: 23.21229
-        // }]
-        // this.setData({
-        //     latitude: temp[0].latitude,
-        //     longitude: temp[0].longitude,
-        //     'markers[0].latitude': temp[0].latitude,
-        //     'markers[0].longitude': temp[0].longitude,
-        //     'markers[1].latitude': temp[temp.length - 1].latitude,
-        //     'markers[1].longitude': temp[temp.length - 1].longitude,
-        //     'polyline[0].points': temp
-        // })
+        Height: 0,
+        scale: 11,
+        latitude: "",
+        longitude: "",
+        radius: '10',
+        address: '',
+        carnumber: 23,
+        markers: [],
+        // controls: [{
+        //         id: 1,
+        //         iconPath: '/assests/imgs/jian.png',
+        //         position: {
+        //             left: 320,
+        //             top: 100 - 50,
+        //             width: 20,
+        //             height: 20
+        //         },
+        //         clickable: true
+        //     },
+        //     {
+        //         id: 2,
+        //         iconPath: '/assests/imgs/jia.png',
+        //         position: {
+        //             left: 340,
+        //             top: 100 - 50,
+        //             width: 20,
+        //             height: 20
+        //         },
+        //         clickable: true
+        //     }
+        // ],
+        circles: []
 
-    }
+    },
+
+    onLoad: function() {
+        var that = this;
+
+        wx.getSystemInfo({
+            success: function(res) {
+                //设置map高度，根据当前设备宽高满屏显示
+                that.setData({
+                    view: {
+                        Height: res.windowHeight
+                    }
+                })
+            }
+        })
+
+        wx.getLocation({
+            type: 'wgs84', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
+            success: function(res) {
+                that.setData({
+                    latitude: res.latitude,
+                    longitude: res.longitude,
+                    markers: [{
+                        id: "1",
+                        latitude: res.latitude,
+                        longitude: res.longitude,
+                        width: 15,
+                        height: 15,
+                        iconPath: "../../images/blank.gif",
+                        title: "当前位置10公里范围内车辆数：" + that.data.carnumber + '辆'
+                    }],
+                    circles: [{
+                        latitude: res.latitude,
+                        longitude: res.longitude,
+                        color: '#FF0000DD',
+                        fillColor: '#7cb5ec88',
+                        radius: 10000,
+                        strokeWidth: 1
+                    }]
+                })
+            }
+        })
+
+    },
+    searchCars: function() {
+        var that = this
+        rest.POST({
+            api: { ctrl: 'Vehicle', action: 'CheckVehicleExist' },
+            params: JSON.stringify(this.data.PlateNo),
+            success: function(res) {
+                that.setData({
+                    latitude: res.latitude,
+                    longitude: res.longitude,
+                    markers: [{
+                        id: "1",
+                        latitude: res.latitude,
+                        longitude: res.longitude,
+                        width: 15,
+                        height: 15,
+                        iconPath: "../../images/blank.gif",
+                        title: "当前位置10公里范围内车辆数：" + that.data.carnumber + '辆'
+                    }],
+                    circles: [{
+                        latitude: res.latitude,
+                        longitude: res.longitude,
+                        color: '#FF0000DD',
+                        fillColor: '#7cb5ec88',
+                        radius: 10000,
+                        strokeWidth: 1
+                    }]
+                })
+            }
+        })
+    },
+
+    regionchange(e) {
+        console.log("regionchange===" + e.type)
+    },
+
+    //点击merkers
+    // markertap(e) {
+    //     console.log(e.markerId)
+
+    //     wx.showActionSheet({
+    //         itemList: ["A"],
+    //         success: function(res) {
+    //             console.log(res.tapIndex)
+    //         },
+    //         fail: function(res) {
+    //             console.log(res.errMsg)
+    //         }
+    //     })
+    // },
+
+    //点击缩放按钮动态请求数据
+    controltap(e) {
+        var that = this;
+        console.log("scale===" + this.data.scale)
+        if (e.controlId === 1) {
+            // if (this.data.scale === 13) {
+            that.setData({
+                    scale: --this.data.scale
+                })
+                // }
+        } else {
+            //  if (this.data.scale !== 13) {
+            that.setData({
+                    scale: ++this.data.scale
+                })
+                // }
+        }
+
+
+    },
+
 
 })

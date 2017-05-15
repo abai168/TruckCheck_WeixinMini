@@ -1,24 +1,21 @@
 <view class="seachCarsDetail">
     <view class="searchCars-search">
-        <input bindinput="bindPlateNo" class="seachCars-input seachCars-longInput" placeholder="请输入地址"/>
-        <input bindinput="bindPlateNo" class="seachCars-input" placeholder="请输入搜索范围（公里）"/>
-        <button class="seachCars-searchbtn" bindtap="searchTrajectory">
+        <input bindinput="bindPlateNo" class="seachCars-input seachCars-longInput" value="{{address}}" placeholder="请输入地址"/>
+        <input bindinput="bindPlateNo" class="seachCars-input" value="{{radius}}" placeholder="请输入搜索范围（公里）"/>
+        <button class="seachCars-searchbtn" bindtap="searchCars">
             <image src="../../images/search.png"></image>
         </button>
     </view>
-    <map 
-        id="map" 
-        scale="10" 
-        longitude="{{longitude}}" 
-        latitude="{{latitude}}"
-        circles="{{circles}}"
-        markers="{{markers}}" 
-        polyline="{{polyline}}" 
-        controls="{{controls}}" 
-        bindcontroltap="controltap" 
-        bindmarkertap="markertap"  
-        bindregionchange="regionchange" 
-        show-location 
-        style="width: 100%; height: 1200rpx;">
+    <map id="map" 
+    longitude="{{longitude}}" 
+    latitude="{{latitude}}" 
+    scale="{{scale}}" 
+    controls="{{controls}}" 
+    bindcontroltap="controltap" 
+    markers="{{markers}}" 
+    circles="{{circles}}"
+    bindregionchange="regionchange"
+    show-location 
+    style="width: 100%; height: {{view.Height}}px;">
     </map>
 </view>
