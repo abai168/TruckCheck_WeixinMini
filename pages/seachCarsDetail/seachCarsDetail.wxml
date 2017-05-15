@@ -1,12 +1,19 @@
 <view class="seachCarsDetail">
-    <view class="searchCars-search">
-        <input bindinput="bindPlateNo" class="seachCars-input seachCars-longInput" value="{{address}}" placeholder="请输入地址"/>
-        <input bindinput="bindPlateNo" class="seachCars-input" value="{{radius}}" placeholder="请输入搜索范围（公里）"/>
+    <!--<view class="searchCars-search">
+        <input bindinput="bindAddress" class="seachCars-input seachCars-longInput" value="{{address}}" placeholder="请输入地址"/>
+        <input bindinput="bindRadius" class="seachCars-input" value="{{radius}}" placeholder="请输入搜索范围（公里）"/>
+        <button class="seachCars-searchbtn" bindtap="searchCars">
+            <image src="../../images/search.png"></image>
+        </button>
+    </view>-->
+     <view class="searchCars-search2">
+        <input bindinput="bindAddress" class="seachCars-input seachCars-longInput" value="{{address}}" placeholder="请输入地址"/>
+        <input bindinput="bindRadius" class="seachCars-input" value="{{radius}}" placeholder="请输入搜索范围（公里）"/>
         <button class="seachCars-searchbtn" bindtap="searchCars">
             <image src="../../images/search.png"></image>
         </button>
     </view>
-    <map id="map" 
+    <map id="searchCarsMap" 
     longitude="{{longitude}}" 
     latitude="{{latitude}}" 
     scale="{{scale}}" 
