@@ -7,7 +7,13 @@
 	position:relative;
 	z-index:10000 !important;
 	top:20rpx;
-	height:250rpx;
+	height:270rpx;
+	/*background:url(../../images/searchCarsBG.png)*/
+}
+.message{
+	margin-left:50rpx;
+	color:red;
+	font-size:35rpx;
 }
 .seachCars-input{
 	display:inline-block;
@@ -25,7 +31,7 @@
 }
 .seachCars-longInput{
 	width:610rpx;	
-	margin-bottom:25rpx;
+	margin-bottom:10rpx;
 }
 .seachCars-searchbtn{
 	float:right;

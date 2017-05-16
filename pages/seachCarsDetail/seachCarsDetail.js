@@ -13,6 +13,7 @@ Page({
         radius: '',
         address: '',
         carnumber: 0,
+        message: '',
         markers: [],
         circles: []
     },
@@ -27,7 +28,7 @@ Page({
         })
     },
     onLoad: function() {
-        var that = this;
+        var that = this
         wx.getSystemInfo({
                 success: function(res) {
                     //设置map高度，根据当前设备宽高满屏显示
@@ -52,7 +53,7 @@ Page({
                         width: 15,
                         height: 15,
                         // iconPath: "../../images/blank.gif",
-                        title: "当前位置10公里范围内车辆数：" + that.data.carnumber + '辆'
+                        // title: "当前位置10公里范围内车辆数：" + that.data.carnumber + '辆'
                     }],
                     circles: [{
                         latitude: res.latitude,
@@ -87,7 +88,8 @@ Page({
                             });
                         }
                         that.setData({
-                            markers: markers
+                            markers: markers,
+                            message: "当前位置10公里范围内车辆数：" + that.data.carnumber + '辆'
                         })
                     }
                 })
@@ -117,7 +119,7 @@ Page({
                         width: 15,
                         height: 15,
                         // iconPath: "../../images/blank.gif",
-                        title: that.data.address + that.data.radius + "公里范围内车辆数：" + that.data.carnumber + '辆'
+                        // title: that.data.address + that.data.radius + "公里范围内车辆数：" + that.data.carnumber + '辆'
                     }],
                     circles: [{
                         latitude: lat,
@@ -152,7 +154,8 @@ Page({
                             });
                         }
                         that.setData({
-                            markers: markers
+                            markers: markers,
+                            message: that.data.address + that.data.radius + "公里范围内车辆数：" + that.data.carnumber + '辆'
                         })
                     }
                 })
@@ -166,7 +169,8 @@ Page({
                             latitude: '',
                             longitude: '',
                             markers: [],
-                            circles: []
+                            circles: [],
+                            message: '地址中请包含城市名称'
                         })
                     }
                 })

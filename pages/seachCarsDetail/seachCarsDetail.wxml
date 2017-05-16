@@ -12,6 +12,7 @@
         <button class="seachCars-searchbtn" bindtap="searchCars">
             <image src="../../images/search.png"></image>
         </button>
+        <view class="message">{{message}}</view>
     </view>
     <map id="searchCarsMap" 
     longitude="{{longitude}}" 
