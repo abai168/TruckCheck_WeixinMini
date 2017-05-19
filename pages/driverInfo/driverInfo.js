@@ -18,9 +18,6 @@ Page({
         })
     },
     search: function() {
-        // wx.navigateTo({
-        //         url: '../driverDetail/driverDetail'
-        //     })
         rest.POST({
             api: { ctrl: 'IDCardVerification', action: 'QueryIDCardInfo' },
             params: this.data.driver,

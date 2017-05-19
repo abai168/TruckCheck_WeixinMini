@@ -72,7 +72,7 @@ function resultByCode(res, requestHandler) {
         case 9003:
             wx.showModal({
                 title: '提示',
-                content: enums.resultCode[res.data.code],
+                content: res.data.message || enums.resultCode[res.data.code],
                 success: function(res) {
                     if (res.confirm) {
                         console.log('用户点击确定')

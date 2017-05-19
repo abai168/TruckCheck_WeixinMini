@@ -42,11 +42,20 @@ Page({
         })
     },
     searchPosition: function() {
+        // var position = { "vno": null, "lat": 22071868, "lon": 70709760, "adr": "山东省淄博市周村区周隆路凤阳家具城西２００米路北旺德福酒楼，向西北方向，24米", "utc": "1493175423693", "spd": 15.0, "drc": 82.0, "bst": 786627, "alc": null, "est": 0 }
+        // var date = filter.filterTime(new Date(parseInt(position.utc)))
+        // wx.openLocation({
+        //     latitude: position.lat / 600000.0,
+        //     longitude: position.lon / 600000.0,
+        //     scale: 8,
+        //     name: position.adr,
+        //     address: '时间：' + date + '\n' + '速度：' + position.spd + 'km/h'
+
+        // })
         rest.POST({
             api: { ctrl: 'Vehicle', action: 'QueryLastPosition' },
             params: JSON.stringify(this.data.PlateNo),
             success: function(res) {
-                // res.result = { "vno": null, "lat": 220718680, "lon": 707097600, "adr": "山东省淄博市周村区周隆路凤阳家具城西２００米路北旺德福酒楼，向西北方向，24米", "utc": "1493175423693", "spd": 15.0, "drc": 82.0, "bst": 786627, "alc": null, "est": 0 };
                 if (!res.result) {
                     wx.showModal({
                         title: '提示',
@@ -61,10 +70,6 @@ Page({
                     })
                     return
                 }
-                // wx.navigateTo({
-                //     // wx.navigateTo()是保留当前页面，跳转到某个页面，跳转页面后可以返回上一页
-                //     url: '../lastPosition/lastPosition?velinfo=' + JSON.stringify(res.result)
-                // })
                 var position = res.result
                 var date = filter.filterTime(new Date(parseInt(position.utc)))
                 wx.openLocation({

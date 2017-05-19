@@ -50,9 +50,9 @@ Page({
                         id: 0,
                         latitude: res.latitude,
                         longitude: res.longitude,
-                        width: 15,
-                        height: 15,
-                        // iconPath: "../../images/blank.gif",
+                        width: 20,
+                        height: 20,
+                        iconPath: "../../images/location.png",
                         // title: "当前位置10公里范围内车辆数：" + that.data.carnumber + '辆'
                     }],
                     circles: [{
@@ -60,7 +60,7 @@ Page({
                         longitude: res.longitude,
                         color: '#FF0000DD',
                         fillColor: '#7cb5ec88',
-                        radius: 10000, //默认10公里
+                        radius: 10000, //默认10公里,以米为单位
                         strokeWidth: 1
                     }]
                 })
@@ -118,7 +118,7 @@ Page({
                             longitude: lng,
                             width: 15,
                             height: 15,
-                            // iconPath: "../../images/blank.gif",
+                            iconPath: "../../images/location.png",
                             // title: that.data.address + that.data.radius + "公里范围内车辆数：" + that.data.carnumber + '辆'
                         }],
                         circles: [{
